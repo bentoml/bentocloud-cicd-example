@@ -13,6 +13,8 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: Build
         uses: bentoml/deploy-bento-action@using-expression
         with:
