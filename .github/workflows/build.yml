@@ -16,7 +16,7 @@ jobs:
       - name: Build
         uses: bentoml/deploy-bento-action@using-expression
         with:
-          build: true
+          build: 'true'
           action: skip
           deployment_name: summarization-cicd
           cloud_api_token: ${{ secrets.CLOUD_API_TOKEN }}
