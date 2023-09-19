@@ -1,0 +1,73 @@
+{
+    "name": "summarization-cicd",
+    "mode": "function",
+    "cluster_name": "default",
+    "kube_namespace": "yatai",
+    "targets": [
+        {
+            "type": "stable",
+            "bento_repository": "summarization",
+            "bento": "eysty3sw42p3bwkv",
+            "canary_rules": null,
+            "config": {
+                "kubeResourceUid": "",
+                "kubeResourceVersion": "",
+                "resource_instance": "starter-aws-t3-2xlarge-cpu-medium",
+                "resources": {
+                    "requests": {
+                        "cpu": "500m",
+                        "memory": "500Mi"
+                    },
+                    "limits": {
+                        "cpu": "1000m",
+                        "memory": "1024Mi"
+                    }
+                },
+                "hpa_conf": {
+                    "min_replicas": 1,
+                    "max_replicas": 1,
+                    "policy": {
+                        "scale_down_behavior": "stable",
+                        "scale_up_behavior": "fast"
+                    }
+                },
+                "envs": [],
+                "runners": {
+                    "summarization": {
+                        "resource_instance": "starter-aws-t3-2xlarge-cpu-medium",
+                        "resources": {
+                            "requests": {
+                                "cpu": "500m",
+                                "memory": "500Mi"
+                            },
+                            "limits": {
+                                "cpu": "1000m",
+                                "memory": "1024Mi"
+                            }
+                        },
+                        "hpa_conf": {
+                            "min_replicas": 1,
+                            "max_replicas": 1,
+                            "policy": {
+                                "scale_down_behavior": "stable",
+                                "scale_up_behavior": "fast"
+                            }
+                        },
+                        "envs": [],
+                        "deployment_strategy": "RollingUpdate",
+                        "traffic_control": {
+                            "timeout": "1m0s",
+                            "request_queue": {}
+                        }
+                    }
+                },
+                "access_control": "public",
+                "deployment_strategy": "RollingUpdate",
+                "traffic_control": {
+                    "timeout": "1m0s",
+                    "request_queue": {}
+                }
+            }
+        }
+    ]
+}
