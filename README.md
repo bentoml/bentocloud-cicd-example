@@ -1,3 +1,4 @@
 # bentocloud-cicd-example
 
-An example BentoML project that demonstrate automated deployment with BentoCloud.
+An minimal example BentoML project that demonstrate automated deployment with BentoCloud.
+
