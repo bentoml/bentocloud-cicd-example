@@ -14,7 +14,7 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
       - name: Build
-        uses: bentoml/deploy-bento-action@main
+        uses: bentoml/deploy-bento-action@using-expression
         with:
           build: true
           action: skip
