@@ -1,0 +1,10 @@
+service: 'service:svc'
+include:
+  - service.py
+  - download_model.py
+python:
+  packages:
+    - torch
+    - transformers
+models:
+  - summarization:v2ftfiswx2ymjhsa
