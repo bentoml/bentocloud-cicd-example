@@ -14,14 +14,14 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
       - uses: bentoml/setup-bentoml-action@v1
-      with:
-        python-version: "3.10"
-        bentoml-version: ${{ inputs.bentoml_version }}
+        with:
+          python-version: "3.10"
+          bentoml-version: ${{ inputs.bentoml_version }}
       - name: Login to Bento Cloud
-      shell: bash
-      run: |
-        echo "Login to Cloud Console at ${{ secrets.CLOUD_ENDPOINT }}"
-        bentoml cloud login --api-token ${{ secrets.CLOUD_API_TOKEN }} --endpoint ${{ secrets.CLOUD_ENDPOINT }}
+        shell: bash
+        run: |
+          echo "Login to Cloud Console at ${{ secrets.CLOUD_ENDPOINT }}"
+          bentoml cloud login --api-token ${{ secrets.CLOUD_API_TOKEN }} --endpoint ${{ secrets.CLOUD_ENDPOINT }}
       - name: Update Deployment in Bento Cloud
-      shell: bash
-      run: bentoml deployment update -f deployment.json
+        shell: bash
+        run: bentoml deployment update -f deployment.json
