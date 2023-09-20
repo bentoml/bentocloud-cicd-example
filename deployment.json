@@ -7,7 +7,7 @@
         {
             "type": "stable",
             "bento_repository": "summarization",
-            "bento": "eysty3sw42p3bwkv",
+            "bento": "dxqncysw6cjvpomu",
             "canary_rules": null,
             "config": {
                 "kubeResourceUid": "",
