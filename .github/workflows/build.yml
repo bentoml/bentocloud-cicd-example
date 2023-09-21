@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Build
-        uses: bentoml/deploy-bento-action@using-expression
+        uses: bentoml/deploy-bento-action@main
         with:
           build: 'true'
           action: skip
